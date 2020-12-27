@@ -2,5 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'index');
-Route::view('/movie', 'show');
+Route::get('/',                 ['uses'=>'MoviesController@index',      'as'=>'movies.index']);
+Route::get('/movies/{movie}',   ['uses'=>'MoviesController@show',       'as'=>'movies.show']);
+
